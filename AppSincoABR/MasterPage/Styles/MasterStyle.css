@@ -1,0 +1,261 @@
+﻿@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+
+.headernav {
+    position: relative;
+    margin: 0 auto;
+    padding: 8px 0;
+    background: #FEFEFE;
+    text-align: right;
+    box-shadow: 1px 1px 3px #333;
+}
+
+.logo {
+    width: 15%;
+    float: left;
+    font-size: 25px;
+    text-align: left;
+    padding-left: 1%;
+    display: inline-flex;
+    /* Esta parte es EL TITULO DE AZ SMART*/
+}
+
+.az {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.menu-area li {
+    display: inline-block;
+}
+
+.menu-area a {
+    color: #000;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    padding: 0 25px;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+}
+
+    .menu-area a:hover {
+        background: #251F51;
+        color: #fff;
+    }
+
+        .menu-area a:hover:after {
+            transform: translateY(-50%) rotate(-35deg);
+        }
+
+.headernav:before {
+    position: absolute;
+    border-top: 10px solid #333;
+    border-right: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    top: 100%;
+    left: 0
+}
+
+.headernav:after {
+    position: absolute;
+    border-top: 10px solid #333;
+    border-left: 10px solid #333;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    top: 100%;
+    right: 0;
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #000;
+}
+
+.Welcome {
+    color: #FFF;
+    font-weight: bold;
+}
+
+.texto {
+    margin: 3em;
+}
+
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 20px 10px;
+    box-shadow: 1px 1px 3px #333;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #251F51; /* Esta parte es del MENU, bienvenido y about page, etc. */
+    color: #fff;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+
+
+    #sidebar.active {
+        margin-left: -250px;
+    }
+
+
+    #sidebar ul.components {
+        padding: 20px 0px;
+        border-bottom: 1px solid #251F51; /* Es la linea entre el menu y article*/
+    }
+
+    #sidebar ul p {
+        padding: 10px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+    #sidebar ul li a {
+        padding: 10px;
+        font-size: 1.1em;
+        display: block;
+        color: #FFF;
+    }
+
+        #sidebar ul li a:hover {
+            color: #F07C00;
+            background: #fff;
+        }
+
+    #sidebar ul li.active > a,
+    a[aria-expanded="true"] { /* Este es el home*/
+        color: #fff;
+        background: #251F51;
+    }
+
+
+    #sidebar ul li.active a:hover {
+        color: #F07C00;
+        background: #fff;
+    }
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc; /* Esto es lo que hay en el menu de home y page*/
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+#content {
+    padding: 10px;
+    transition: all 0.3s;
+    background-color: #251F51;
+}
+
+@media(maz-width:768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+        #sidebar.active {
+            margin-left: 0px;
+        }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.img-circle, #ButtonLogout {
+    border-radius: 50%;
+    width: 45px;
+    height: 50px;
+}
+
+#userbox {
+    text-align: right;
+}
+
+.profile-picture {
+    display: inline-flex;
+}
+
+.profile-info {
+    margin: 0 15px 0 15px;
+    display: inline-block;
+}
+
+.name, .role {
+    display: block;
+    color: #6d7fcc;
+}
+
+.content {
+    width: -webkit-fill-available;
+}
