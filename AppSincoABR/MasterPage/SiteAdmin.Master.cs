@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AppSincoABR.MasterPage
 {
-    public partial class SiteTeacher : System.Web.UI.MasterPage
+    public partial class Site1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,15 +17,16 @@ namespace AppSincoABR.MasterPage
             {
                 Response.Redirect("../Login.aspx");
             }
-              
+
             if (!IsPostBack)
             {
                 if (Session["Usuario"] == null)
                 {
                     Response.Redirect("../Login.aspx");
-                }                   
-            }                
+                }
+            }
         }
+
         protected void ButtonLogout_Click1(object sender, EventArgs e)
         {
             Session.Clear();

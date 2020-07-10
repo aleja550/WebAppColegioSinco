@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteStudent.Master.cs" Inherits="AppSincoABR.MasterPage.SiteTeacher" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteAdmin.Master.cs" Inherits="AppSincoABR.MasterPage.Site1" %>
 
 <!DOCTYPE html>
 
@@ -69,13 +69,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestion Usuarios</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Plantel</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="#">Usuarios</a>
+                                <a href="../AdminPages/CreateUser.aspx">Crear Usuarios</a>
                             </li>
                             <li>
-                                <a href="#">Others</a>
+                                <a href="#">Estudiantes</a>
+                            </li>
+                             <li>
+                                <a href="#">Materias</a>
                             </li>
                         </ul>
                     </li>
@@ -118,7 +121,7 @@
                                 </figure>
                                 <div class="profile-info" data-lock-name="SincoABR">
                                     <label class="name"><%=Session["Usuario"]%></label>
-                                    <label class="role"><%=Session["TipoUser"] = "Estudiante"%></label>
+                                    <label class="role"><%=Session["TipoUser"] = "Administrador"%></label>
                                 </div>
                             </a>
                             <asp:ImageButton ID="ButtonLogout" runat="server" ImageUrl="../images/shutdown1.png" OnClick="ButtonLogout_Click1" /> 

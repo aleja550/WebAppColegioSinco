@@ -9,6 +9,8 @@ namespace Entities
         public int IdUsuario { get; set; }
         public string Username { get; set; }
         public string Contraseña { get; set; }
-        public int TipoUser { get; set; }
+        public int TipoUser { get; set; }    
+        public string Avatar { get; set; }
+        public int FKCodigoTemplate { get; set; }
     }
 }
