@@ -4,7 +4,7 @@
     <title>Crear Usuario</title>
 
     <link rel="stylesheet" type="text/css" href="../css/ManagementStyle.css" />
-    <script src="scripts/validations.js" type="text/javascript"></script>
+    <script src="../scripts/validations.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -20,9 +20,8 @@
             <asp:Label ID="TipoUser" Text="Tipo Usuario: " AssociatedControlID="DdlUserType" runat="server"></asp:Label>
             <asp:DropDownList ID="DdlUserType" runat="server" OnSelectedIndexChanged="DdlUserType_SelectedIndexChanged" AutoPostBack="true">
                 <asp:ListItem Selected="True" Value="0">Seleccione</asp:ListItem>
-                <asp:ListItem Value="1">Estudiante</asp:ListItem>
-                <asp:ListItem Value="2">Profesor</asp:ListItem>
-                <asp:ListItem Value="3">Administrador</asp:ListItem>
+                <asp:ListItem Value="2">Estudiante</asp:ListItem>
+                <asp:ListItem Value="3">Profesor</asp:ListItem>
             </asp:DropDownList>
         </div>
 
@@ -76,7 +75,7 @@
             </asp:RadioButtonList>
         </div>
         <div class="button">
-            <asp:Button ID="ButtonS" runat="server" Text="Guardar" OnClientClick="return crearuserValidate();" OnClick="ButtonSave_Click1" />
+            <asp:Button ID="ButtonS" runat="server" Text="Guardar" OnClientClick="return crearuserValidate();" OnClick="ButtonSave_Click1" />             
         </div>
     </section>
     <br />

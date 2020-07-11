@@ -17,14 +17,13 @@ namespace Logic
             try
             {
                 JObject jsonUser = JObject.Parse(new UsuarioDA().LogIn(username, password));
-                int template = jsonUser.GetValue("fkCodigoTemplate") == null ? 0 : Convert.ToInt32(jsonUser.GetValue("fkCodigoTemplate"));
                 Usuario usuario = new Usuario
                 {
                     Username = jsonUser.GetValue("username").ToString(),
                     Contraseña = jsonUser.GetValue("contraseña").ToString(),
                     TipoUser = Convert.ToInt32(jsonUser.GetValue("tipoUser")),
                     Avatar = jsonUser.GetValue("avatar").ToString(),
-                    FKCodigoTemplate = template
+                    FKCodigoTemplate = Convert.ToInt32(jsonUser.GetValue("fkCodigoTemplate")),
                 };
 
                 return usuario;
@@ -101,6 +100,25 @@ namespace Logic
                 };
 
                 return teacher;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Materia GetMateriaByName(string materia)
+        {
+            try
+            {
+                JObject jsonMateria = JObject.Parse(new MateriaDA().GetAssignatureByName(materia));
+                Materia usuario = new Materia
+                {
+                    IdMateria = Convert.ToInt32(jsonMateria.GetValue("IdMateria")),
+                    NombreMateria = jsonMateria.GetValue("NombreMateria").ToString()
+                };
+
+                return usuario;
             }
             catch (Exception ex)
             {

@@ -14,12 +14,11 @@ namespace AppSincoABR.AdminPages
         {
             if (!IsPostBack)
             {
-                GetTemplates();
-                GetAssignatures();
+                GetTemplates();            
                 DdlMateria.Visible = false;
                 MateriaLbl.Visible = false;
-                if(DdlUserType.SelectedValue == "2")
-                {
+                if(DdlUserType.SelectedValue == "3")
+                {  
                     DdlMateria.Visible = true;
                     MateriaLbl.Visible = true;
                 }
@@ -45,69 +44,115 @@ namespace AppSincoABR.AdminPages
             {
                 ListThemes.Items.Add(new ListItem(
                     $"<img class='size' src='data: image / jpg; base64,{template.ImagenTemplate}' />",
-                    template.TituloTemplate));
+                    template.CodigoTemplate.ToString()));
             }
         }
 
         protected void ButtonSave_Click1(object sender, EventArgs e)
         {
             Usuario usuario = new GetBusinessLogic().GetUser(Usuariotxt.Text);
-            Profesor profesor = new GetBusinessLogic().GetTeacher(Convert.ToInt64(Cedulatxt.Text));
-            if (usuario != null || profesor != null)
+            if (usuario != null)
             {
                 Response.Write("<script> alert('Ya hay un usuario o un profesor con está cedula en el sistema. Valide por favor.')</script>");
+                return;
             }
 
             try
             {
-                int userCreated = new CreateBusinessLogic().CreateUser(new Usuario
+                int userCreated = CreateUsuario();
+                
+                if(userCreated == 0)
                 {
-                    Username = Usuariotxt.Text,
-                    Contraseña = Clavetxt.Text,
-                    TipoUser = Convert.ToInt32(DdlUserType.SelectedValue),
-                    Avatar = Convert.ToBase64String(ThumnailImage()),
-                    FKCodigoTemplate = 1
-                });
+                    Response.Write("<script> alert('El usuario no ha podido ser creado')</script>");
+                    return;
+                }
 
-                int teacherCreated = new CreateBusinessLogic().CreateTeacher(new Profesor
+                int resultSaving = 0;
+
+                switch (DdlUserType.SelectedValue)
                 {
-                    Cedula = Convert.ToInt64(Cedulatxt.Text),
-                    Nombres = Nombrestxt.Text,
-                    Apellidos = Apellidostxt.Text,
-                    FKUsuario = userCreated,
-                    FkIdMateria = Convert.ToInt32(DdlMateria.SelectedValue)
-                });
+                    case "2":
+                        resultSaving = CreateStudent(userCreated);
+                        break;
+                    case "3":
+                        resultSaving = CreateTeacher(userCreated);
+                        break;
+                    default:
+                        Response.Write("<script> alert('Este tipo de usuario no existe.')</script>");
+                        break;
+                }   
+
+                if(resultSaving == 0)
+                {
+                    Response.Write("<script> alert('El usuario no ha podido ser creado')</script>");
+                    return;
+                }
+
+                Response.Write("<script> alert('El usuario se ha creado exitosamente. ')</script>");
+                Response.AddHeader("REFRESH", "3;CreateUser.aspx");
             }
             catch (Exception ex)
             {
                 Response.Write($"<script> Console.log({ex.Message}, {ex.InnerException},{ex.Source})</script>");
                 Response.Write("<script> alert('Ha ocurrido un error intentelo más tarde. ')</script>");
             }
-
-
-            Response.Write("<script> alert('Se ha creado el profesor con su respectivo usuario.')</script>");
-            Response.Redirect("DefaultAdmin.aspx");
         }
 
+        protected int CreateUsuario()
+        {
+            int userCreated = new CreateBusinessLogic().CreateUser(new Usuario
+            {
+                Username = Usuariotxt.Text,
+                Contraseña = Clavetxt.Text,
+                TipoUser = Convert.ToInt32(DdlUserType.SelectedValue),
+                Avatar = Convert.ToBase64String(ThumnailImage()),
+                FKCodigoTemplate = Convert.ToInt32(ListThemes.SelectedValue)
+            });
+
+            return userCreated;
+        }
+
+        protected int CreateTeacher(int idUser)
+        {
+            int teacherCreated = new CreateBusinessLogic().CreateTeacher(new Profesor
+            {
+                Cedula = Convert.ToInt64(Cedulatxt.Text),
+                Nombres = Nombrestxt.Text,
+                Apellidos = Apellidostxt.Text,
+                FKUsuario = idUser,
+                FkIdMateria = Convert.ToInt32(DdlMateria.SelectedValue)
+            });
+
+            return teacherCreated;
+        }
+
+        protected int CreateStudent(int idUser)
+        {
+            int studentCreated = new CreateBusinessLogic().CreateStudent(new Estudiante
+            {
+                Cedula = Convert.ToInt64(Cedulatxt.Text),
+                Nombres = Nombrestxt.Text,
+                Apellidos = Apellidostxt.Text,
+                FKUsuario = idUser,
+            });
+
+            return studentCreated;
+        }
 
         protected void DdlUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (DdlUserType.SelectedValue)
             {
-                case "1":
+                case "2":
                     UserTypeName.InnerText = $"Creación Nuevo Estudiante";
                     DdlMateria.Visible = false;
                     MateriaLbl.Visible = false;
                     break;
-                case "2":
+                case "3":
                     UserTypeName.InnerText = $"Creación Nuevo Profesor";
+                    GetAssignatures();
                     DdlMateria.Visible = true;
                     MateriaLbl.Visible = true;
-                    break;
-                case "3":
-                    UserTypeName.InnerText = $"Creación Nuevo Administrador";
-                    DdlMateria.Visible = false;
-                    MateriaLbl.Visible = false;
                     break;
                 default:
                     Response.Write("<script> alert('Este tipo de usuario no existe.')</script>");

@@ -54,6 +54,9 @@ namespace AppSincoABR.MasterPage
                 case "3":
                     LinkCss.Attributes.Add("href", "Styles/YellowTheme.css");
                     break;
+                default:
+                    LinkCss.Attributes.Add("href", "Styles/MasterStyle.css");
+                    break;
             }
         }
     }

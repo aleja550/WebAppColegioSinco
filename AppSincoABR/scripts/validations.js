@@ -13,17 +13,17 @@
 
 
 function crearuserValidate() {
-    var CodCliente, TipoUser, Nombre, Apellido, Usuario, Clave;
+    var Cedula, TipoUser, Nombre, Apellido, Usuario, Clave;
 
-    CodCliente = document.getElementById("ContentD_DdlCliente").value;
+    Cedula = document.getElementById("ContentD_Cedulatxt").value;
     TipoUser = document.getElementById("ContentD_DdlUserType").value;
-    Nombre = document.getElementById("ContentD_txtNombreUsuario").value;
-    Apellido = document.getElementById("ContentD_txtApellido").value;
+    Nombre = document.getElementById("ContentD_Nombrestxt").value;
+    Apellido = document.getElementById("ContentD_Apellidostxt").value;
     Usuario = document.getElementById("ContentD_Usuariotxt").value;
-    Clave = document.getElementById("ContentD_Passtxt").value;
+    Clave = document.getElementById("ContentD_Clavetxt").value;
     expresionregusuario = /[A-Za-z0-9]$/;
 
-    if (CodCliente == 0 || TipoUser == "Select" || Nombre == "" || Apellido == "" || Usuario == "" || Clave == "") {
+    if (Cedula == 0 || TipoUser == "Select" || Nombre == "" || Apellido == "" || Usuario == "" || Clave == "") {
         alert("Todos los campos son obligatorios");
         return false;
     }
@@ -58,6 +58,21 @@ function edituserValid() {
         return false;
     }
 
+    return true;
+}
+
+function materiaValid() {
+    var materia = document.getElementById("ContentD_Materiatxt").value;
+
+    if (materia == "") {
+        alert("Todos los campos son obligatorios");
+        return false;
+    }
+
+    else if (materia.length > 25) {
+        alert("Los campos solo pueden tener hasta 25 carácteres");
+        return false;
+    }
     return true;
 }
 

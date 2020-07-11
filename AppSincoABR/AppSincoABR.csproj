@@ -152,6 +152,7 @@
     <Content Include="scripts\WebForms\WebParts.js" />
     <Content Include="scripts\WebForms\WebUIValidation.js" />
     <Content Include="scripts\validations.js" />
+    <Content Include="TeacherPages\CrearMateria.aspx" />
     <Content Include="TeacherPages\DefaultTeacher.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -207,6 +208,13 @@
       <DependentUpon>SiteStudent.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeacherPages\CrearMateria.aspx.cs">
+      <DependentUpon>CrearMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPages\CrearMateria.aspx.designer.cs">
+      <DependentUpon>CrearMateria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeacherPages\DefaultTeacher.aspx.cs">
       <DependentUpon>DefaultTeacher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

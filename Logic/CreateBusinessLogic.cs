@@ -9,6 +9,20 @@ namespace Logic
 {
     public class CreateBusinessLogic
     {
+        public int CreateUser(Usuario usuario)
+        {
+            JObject jsonUser = new JObject
+            {
+                { "Username", $"{usuario.Username}" },
+                { "Contraseña", $"{usuario.Contraseña}" },
+                { "TipoUser", $"{usuario.TipoUser}" },
+                { "Avatar", $"{usuario.Avatar}"},
+                { "FKCodigoTemplate", $"{usuario.FKCodigoTemplate}" }
+            };
+            int result = new UsuarioDA().CreateUser(jsonUser);
+            return result;
+        }
+
         public int CreateTeacher(Profesor profesor)
         {
             JObject jsonTeacher = new JObject
@@ -23,17 +37,26 @@ namespace Logic
             return result;
         }
 
-        public int CreateUser(Usuario usuario)
-         {
-            JObject jsonUser = new JObject
+        public int CreateStudent(Estudiante estudiante)
+        {
+            JObject jsonStudent = new JObject
             {
-                { "Username", $"{usuario.Username}" },
-                { "Contraseña", $"{usuario.Contraseña}" },
-                { "TipoUser", $"{usuario.TipoUser}" },
-                { "Avatar", $"{usuario.Avatar}"},
-                { "FKCodigoTemplate", $"{usuario.FKCodigoTemplate}" }
+                { "Cedula", $"{estudiante.Cedula}" },
+                { "Nombres", $"{estudiante.Nombres}" },
+                { "Apellidos", $"{estudiante.Apellidos}" },
+                { "FKUsuario", $"{estudiante.FKUsuario}"},
             };
-            int result = new UsuarioDA().CreateUser(jsonUser);
+            int result = new EstudianteDA().CreateStudent(jsonStudent);
+            return result;
+        }
+
+        public int CreateAssignature(string materia)
+        {
+            JObject jsonAssignature = new JObject
+            {
+                { "NombreMateria", $"{materia}" }
+            };
+            int result = new MateriaDA().CreateAssignature(jsonAssignature);
             return result;
         }
     }

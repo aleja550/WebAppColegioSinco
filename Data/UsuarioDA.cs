@@ -79,7 +79,7 @@ namespace Data
             }
             catch (Exception ex)
             {
-                return resultRequest;
+                return 0;
             }
 
             return resultRequest;

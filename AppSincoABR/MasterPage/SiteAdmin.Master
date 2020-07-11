@@ -72,13 +72,10 @@
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Plantel</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="../AdminPages/CreateUser.aspx">Crear Usuarios</a>
-                            </li>
-                            <li>
-                                <a href="#">Estudiantes</a>
-                            </li>
+                                <a href="CreateUser.aspx">Crear Usuarios</a>
+                            </li>                         
                              <li>
-                                <a href="#">Materias</a>
+                                <a href="../TeacherPages/CrearMateria.aspx">Crear Materias</a>
                             </li>
                         </ul>
                     </li>
