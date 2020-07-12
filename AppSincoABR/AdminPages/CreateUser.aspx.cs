@@ -89,7 +89,7 @@ namespace AppSincoABR.AdminPages
                 }
 
                 Response.Write("<script> alert('El usuario se ha creado exitosamente. ')</script>");
-                Response.AddHeader("REFRESH", "3;CreateUser.aspx");
+                Response.AddHeader("REFRESH", "1;CreateUser.aspx");
             }
             catch (Exception ex)
             {

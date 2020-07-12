@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="AppSincoABR.AdminPages.CreateUser" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <title>Crear Usuario</title>
@@ -75,7 +76,7 @@
             </asp:RadioButtonList>
         </div>
         <div class="button">
-            <asp:Button ID="ButtonS" runat="server" Text="Guardar" OnClientClick="return crearuserValidate();" OnClick="ButtonSave_Click1" />             
+            <asp:Button ID="ButtonS" runat="server" Text="Guardar" OnClientClick="return crearuserValidate();" OnClick="ButtonSave_Click1" />
         </div>
     </section>
     <br />

@@ -42,13 +42,11 @@
 
                 <div class="logo">
                     <img class="az" src="../images/studyimage.png" />
-                    <h3>SincoABR APP</h3>
+                    <h3>SincoABR</h3>
                 </div>
 
                 <ul class="menu-area">
-                    <li><a href="Default.aspx">Home</a></li>
-                    <li><a href="AddTemplateBD.aspx">Servicios</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="../AdminPages/DefaultAdmin.aspx">Home</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,24 +67,31 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Plantel</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Usuarios</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
                                 <a href="CreateUser.aspx">Crear Usuarios</a>
                             </li>                         
                              <li>
-                                <a href="../TeacherPages/CrearMateria.aspx">Crear Materias</a>
+                                <a href="CrearMateria.aspx">Crear Materias</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Sim Cards</a>
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Estudiantes</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                            <li>
+                                <a href="ListaEstudiantes.aspx">Estudiantes</a>  
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#">Equipos GPS</a>
-                    </li>
-                    <li>
-                        <a href="#">Vehiculos</a>
+                        <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestión Profesores</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu3">
+                            <li>
+                                <a href="ListaProfesores.aspx">Profesores</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 

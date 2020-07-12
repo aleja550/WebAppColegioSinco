@@ -42,13 +42,11 @@
 
                 <div class="logo">
                     <img class="az" src="../images/studyimage.png" />
-                    <h3>SincoABR APP</h3>
+                    <h3>SincoABR</h3>
                 </div>
 
                 <ul class="menu-area">
-                    <li><a href="Default.aspx">Home</a></li>
-                    <li><a href="AddTemplateBD.aspx">Servicios</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="../TeacherPages/DefaultTeacher.aspx">Home</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,25 +67,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gestion Usuarios</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Usuarios</a>
-                            </li>
-                            <li>
-                                <a href="#">Others</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Sim Cards</a>
-                    </li>
-                    <li>
-                        <a href="#">Equipos GPS</a>
-                    </li>
-                    <li>
-                        <a href="#">Vehiculos</a>
-                    </li>
+                        <a href="CalificarEstudiantes.aspx">Calificar Estudiantes</a>
+                    </li>                   
                 </ul>
 
                 <ul class="list-unstyled CTAs">

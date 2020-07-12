@@ -82,5 +82,30 @@ namespace Data
 
             return resultRequest;
         }
+
+        public string GetAssignaturesByTeacher(string username)
+        {
+            string assignatures = null;
+
+            HttpResponseMessage response;
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    response = client.GetAsync("https://localhost:44326/api/Materia/ObtenerMateriaByUsername/" + username).GetAwaiter().GetResult();
+                }
+
+                if (response.IsSuccessStatusCode)
+                {
+                    assignatures = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                }
+
+                return assignatures;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

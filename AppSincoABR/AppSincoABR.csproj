@@ -105,9 +105,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPages\AsignarMaterias.aspx" />
     <Content Include="AdminPages\CreateUser.aspx" />
     <Content Include="AdminPages\DefaultAdmin.aspx" />
+    <Content Include="AdminPages\EditStudent.aspx" />
+    <Content Include="AdminPages\EditTeacher.aspx" />
+    <Content Include="AdminPages\ListaEstudiantes.aspx" />
+    <Content Include="AdminPages\ListaProfesores.aspx" />
     <Content Include="css\ManagementStyle.css" />
+    <Content Include="images\edit.png" />
     <Content Include="MasterPage\Styles\YellowTheme.css" />
     <Content Include="StudentPages\DefaultStudent.aspx" />
     <Content Include="images\shutdown1.png" />
@@ -152,12 +158,22 @@
     <Content Include="scripts\WebForms\WebParts.js" />
     <Content Include="scripts\WebForms\WebUIValidation.js" />
     <Content Include="scripts\validations.js" />
-    <Content Include="TeacherPages\CrearMateria.aspx" />
+    <Content Include="AdminPages\CrearMateria.aspx" />
+    <Content Include="StudentPages\ReporteNotas.aspx" />
+    <Content Include="TeacherPages\Calificacion.aspx" />
+    <Content Include="TeacherPages\CalificarEstudiantes.aspx" />
     <Content Include="TeacherPages\DefaultTeacher.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\AsignarMaterias.aspx.cs">
+      <DependentUpon>AsignarMaterias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AsignarMaterias.aspx.designer.cs">
+      <DependentUpon>AsignarMaterias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +187,34 @@
     </Compile>
     <Compile Include="AdminPages\DefaultAdmin.aspx.designer.cs">
       <DependentUpon>DefaultAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\EditStudent.aspx.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\EditStudent.aspx.designer.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\EditTeacher.aspx.cs">
+      <DependentUpon>EditTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\EditTeacher.aspx.designer.cs">
+      <DependentUpon>EditTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ListaEstudiantes.aspx.cs">
+      <DependentUpon>ListaEstudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ListaEstudiantes.aspx.designer.cs">
+      <DependentUpon>ListaEstudiantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ListaProfesores.aspx.cs">
+      <DependentUpon>ListaProfesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ListaProfesores.aspx.designer.cs">
+      <DependentUpon>ListaProfesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\SiteTeacher.Master.cs">
       <DependentUpon>SiteTeacher.Master</DependentUpon>
@@ -208,12 +252,33 @@
       <DependentUpon>SiteStudent.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeacherPages\CrearMateria.aspx.cs">
+    <Compile Include="AdminPages\CrearMateria.aspx.cs">
       <DependentUpon>CrearMateria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TeacherPages\CrearMateria.aspx.designer.cs">
+    <Compile Include="AdminPages\CrearMateria.aspx.designer.cs">
       <DependentUpon>CrearMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPages\ReporteNotas.aspx.cs">
+      <DependentUpon>ReporteNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPages\ReporteNotas.aspx.designer.cs">
+      <DependentUpon>ReporteNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPages\Calificacion.aspx.cs">
+      <DependentUpon>Calificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPages\Calificacion.aspx.designer.cs">
+      <DependentUpon>Calificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPages\CalificarEstudiantes.aspx.cs">
+      <DependentUpon>CalificarEstudiantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPages\CalificarEstudiantes.aspx.designer.cs">
+      <DependentUpon>CalificarEstudiantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherPages\DefaultTeacher.aspx.cs">
       <DependentUpon>DefaultTeacher.aspx</DependentUpon>

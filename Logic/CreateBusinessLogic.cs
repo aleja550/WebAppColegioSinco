@@ -59,5 +59,18 @@ namespace Logic
             int result = new MateriaDA().CreateAssignature(jsonAssignature);
             return result;
         }
+
+        public int CreateNotes(Notas notes)
+        {
+            JObject jsonNotes = new JObject
+            {
+                { "Nota1", $"{notes.Nota1}" },
+                { "Nota2", $"{notes.Nota2}" },
+                { "FKIdMateria", $"{notes.FKIdMateria}" },
+                { "FKIdEstudiante", $"{notes.FKIdEstudiante}"},
+            };
+            int result = new NotasDA().CreateNotes(jsonNotes);
+            return result;
+        }
     }
 }

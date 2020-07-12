@@ -13,7 +13,6 @@
     <script src="js/jqueryt.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-
 </head>
 <body>
 
