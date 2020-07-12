@@ -11,8 +11,7 @@ namespace AppSincoABR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string firstname = Convert.ToString(Session["Usuario"]);
-            Label1.Text = "   Bienvenido a tu Dashboard " + firstname;
+            UserName.Text = $"   Bienvenido a tu Dashboard {Convert.ToString(Session["Usuario"])}";
         }
     }
 }

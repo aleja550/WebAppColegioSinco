@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteStudent.Master.cs" Inherits="AppSincoABR.MasterPage.SiteTeacher" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteTeacher.master.cs" Inherits="AppSincoABR.MasterPage.SiteTeacher1" %>
 
 <!DOCTYPE html>
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <ul class="menu-area">
-                    <li><a href="../StudentPages/DefaultStudent.aspx">Home</a></li>
+                    <li><a href="../TeacherPages/DefaultTeacher.aspx">Home</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,8 +67,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="ReporteNotas.aspx">Reporte de Notas</a>
-                    </li>
+                        <a href="CalificarEstudiantes.aspx">Calificar Estudiantes</a>
+                    </li>                   
                 </ul>
 
                 <ul class="list-unstyled CTAs">
@@ -99,7 +99,7 @@
                                 </figure>
                                 <div class="profile-info" data-lock-name="SincoABR">
                                     <label class="name"><%=Session["Usuario"]%></label>
-                                    <label class="role"><%=Session["TipoUser"] = "Estudiante"%></label>
+                                    <label class="role"><%=Session["TipoUser"] = "Profesor"%></label>
                                 </div>
                             </a>
                             <asp:ImageButton ID="ButtonLogout" runat="server" ImageUrl="../images/shutdown1.png" OnClick="ButtonLogout_Click1" /> 
@@ -116,3 +116,4 @@
     </form>
 </body>
 </html>
+

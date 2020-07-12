@@ -13,12 +13,10 @@
     <script src="js/jqueryt.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-
 </head>
 <body>
 
     <form id="form1" runat="server">
-
         <div class="login">
             <img src="images/studyLogin.png" />
             <h2>Inicio Sesión</h2>
@@ -27,13 +25,12 @@
                 <asp:TextBox ID="txtUsuario" runat="server" CssClass="UText" placeholder="Usuario"></asp:TextBox>
                 <asp:TextBox ID="txtClave" name="txtClave" type="password" runat="server" TextMode="Password" placeholder="Contraseña "> </asp:TextBox>
             </div>
-        </div>
 
+        </div>
         <div class="log">
             <asp:Button ID="Button1" runat="server" Text="Entrar" OnClientClick="return LoginValidate();" OnClick="Button1_Click1" PostBackUrl="~/Login.aspx" />
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
-
     </form>
 </body>
 </html>
